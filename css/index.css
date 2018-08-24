@@ -70,20 +70,55 @@ a{
     height: 40px;
     float:right;
     background: #424242;
+    position: relative;
 }
 .ds{
     width: 290px;
-    height: 100px;
+    height: 0px;
     background:#fff;
-    box-shadow: 0px 4px 5px rgba(0,0,0,0.2);
     font-size: 12px;
     color:#424242;
     text-align: center;
     line-height: 100px;
     position: absolute;
-    right:149px;
+    right:0px;
     top:40px;
-    display:none;
+    overflow: hidden;
+}
+.ku{
+    width: 0px;
+    height: 440px;
+    background:#fff;
+    position: absolute;
+    left:234px;
+    top:-20px;
+    overflow: hidden;
+    z-index: 999;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:10px 0px;
+}
+.xk{
+    width: 200px;
+    height: 70px;
+    margin-left: 20px;
+    line-height: 70px;
+    display: flex;
+}
+.xk>img{
+    width: 50px;
+    height: 48px;
+    margin-top: 12px;
+}
+.img_jj{
+    width: 80px;
+    font-size: 14px;
+    margin-left: 12px;
+}
+.img_jj:hover{
+    color:#ff6700;
 }
 .car{
     width: 100px;
@@ -111,7 +146,7 @@ a{
     color:#ff6700;
 }
 .ShoppingCart:hover .ds{
-    display: block;
+    transition: all .5s;
 }
 .Navigation{
     width: 100%;
@@ -248,6 +283,7 @@ a{
     margin-bottom:auto;
     background:url(../img/icon-slides.png) no-repeat;
     background-position:-83px 0;
+    z-index: 100;
 }
 .ui_left:hover{
     background-position:0px 0px;
@@ -263,6 +299,7 @@ a{
     margin-bottom:auto;
     background:url(../img/icon-slides.png) no-repeat;
     background-position:-126px 0;
+    z-index: 100;
 }
 .ui_right:hover{
     background-position:-42px 0px;
@@ -273,6 +310,7 @@ a{
     background:rgba(0,0,0,0.6);
     position:absolute;
     padding:20px 0;
+    z-index: 100;
 }
 .tag ul li{
     width: 204px;
@@ -280,6 +318,7 @@ a{
     font-size: 14px;
     line-height: 42px;
     padding-left: 30px;
+    position: relative;
 }
 .tag ul li:hover{
     background:#ff6700;
@@ -292,6 +331,26 @@ a{
     font-weight: bold;
     float:left;
 }
+.piotin{
+    width: 80px;
+    height: 20px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    right:40px;
+    bottom:20px;
+}
+.pointny{
+    width: 6px;
+    height: 6px;
+    background: #948F86;
+    border-radius: 50%;
+    z-index: 100;
+    border:2px solid #A9A9AC;
+}
+.piotin a{
+    z-index: 100;
+}
 .gt{
     display:block;
     width: 16px;
@@ -303,12 +362,23 @@ a{
 .imgbox{
     width: 1226px;
     height: 460px;
+    display: flex;
+}
+.img_box{
+    width: 1226px;
+    height: 460px;
     position: relative;
 }
-.imgbox a img{
+.img_box img{
     width: 1226px;
     height: 460px;
     position: absolute;
+    left: 0;
+    top: 0;
+}
+.img_b{
+    width: 1226px;
+    height: 460px;
 }
 .passageway{
     width: 1226px;
@@ -657,6 +727,7 @@ a{
     height: 673px;
     background:#ffffff;
     margin: 20px auto 42px;
+    position: relative;
 }
 .appliance{
      width: 1226px;
@@ -685,7 +756,7 @@ a{
     color:#424242;
     margin-right: 30px;
 }
-.tab1{
+.tab:hover{
     color: #ff6700;
     border-bottom:2px solid #ff6700;
 }
@@ -709,8 +780,20 @@ a{
 .box{
     width: 992px;
     height: 614px;
-    background: #f5f5f5;
+    background: #F5F5F5;
     float:right;
+}
+.Appliance>.box{
+    width: 992px;
+    height: 614px;
+    background: yellowgreen;
+    float:right;
+    position: absolute;
+    right: 0;
+    bottom:0;
+ } 
+ .Appliance>.waterclaen{
+    z-index: 10;
 }
 .brick{
     width: 234px;
@@ -720,6 +803,7 @@ a{
     margin:0 0 14px 14px;
     position:relative;
     overflow: hidden;
+    z-index: 10;
 }
 .brick:hover{
     transform:translateY(-4px);
@@ -773,6 +857,7 @@ a{
     background: #ffffff;
     float:right;
     margin: 0 0 14px 14px;
+    z-index: 10;
 }
 .waterclaen:hover{
     transform: translateY(-4px);
@@ -802,6 +887,7 @@ a{
     background:#ffffff;
     float:right;
     margin: 0 0 14px 14px;
+    z-index: 10;
 }
 .waterclaen1:hover{
     transform: translateY(-4px);
@@ -920,11 +1006,10 @@ a{
     transition:all 0.25s 0s linear;
     box-shadow: 0px 4px 5px rgba(0,0,0,0.2);
 }
-.re a{
-    display:block;
+.ca{
     width: 240px;
-    height: 72px;
-    margin: 35px 0 0 28px;
+    height: 90px;
+    margin:34px 32px 0px 28px;
 }
 .word7{
     font-size: 14px;
@@ -935,11 +1020,13 @@ a{
     height: 18px;
     font-size: 14px;
     color:#b0b0b0;
-    margin-left: 28px;
+    margin: 0px 0px 17px 28px;
 }
 .info{
     width: 236px;
     height: 22px;
+    margin-left: 28px;
+    float:left;
 }
 .info a{
     display:block;
@@ -958,7 +1045,6 @@ a{
     width: 50px;
     height: 15px;
     color:#ff6700;
-    float:right;
 }
 .content{
     width: 1226px;
