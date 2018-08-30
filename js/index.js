@@ -94,3 +94,128 @@
                 }
             }
 
+
+            function floor(n){
+            let Appliance=document.querySelectorAll(".Appliance")[n];
+            let TAB1=document.querySelectorAll(".TAB1")[n];
+            let tab=TAB1.querySelectorAll(".tab");
+            let box=Appliance.querySelectorAll(".box");
+            
+    for(let i=0;i<tab.length;i++){
+        box[i].style.display = "none";
+        tab[i].onmouseenter=function(){
+            for(let j=0;j<tab.length;j++){
+                box[j].style.display = "none";
+                tab[j].className=""
+                tab[j].style.borderBottom = "none";
+            }
+            box[i].style.display = "block";
+            tab[i].className="tab";
+            tab[i].style.borderBottom = "2px solid #FF6700";
+        }
+    }
+    box[0].style.display = "block";
+    }
+    floor(0);
+    floor(1);
+    floor(2);
+    floor(3);
+    floor(4);
+
+
+    function cont(n){
+    let content=document.querySelector(".content");
+    let re1=content.querySelector(".re1")[n];
+    let re_y_contian=re1.querySelectorAll(".re_y_contian");
+    let li=re1.querySelectorAll("li");
+    let co_left=re1.querySelector(".co_left");
+    let co_right=re1.querySelector(".co_right");
+    console.log(content);
+
+    let now=0;
+    let next=0;
+    let flag=true;
+    let wid=296;
+
+
+    co_left.onclick=function(){
+        if(flag==false){
+            return;
+        }
+        if(next==0){
+            return
+        }
+        flag=false;
+        con_move1();
+    }
+
+    co_right.onclick=function(){
+        if(flag==false){
+            return;
+        }
+        if(next==re_y_contian.length-1){
+            return
+        }
+        flag=false;
+        con_move();
+    }
+
+    function con_move() {
+        next++;
+        if(next==re_y_contian.length){
+            next=0;
+        }
+        re_y_contian[next].style.left=wid+"px";
+        animate(re_y_contian[now],{left:-wid});
+        animate(re_y_contian[next],{left:0},function () {
+            flag=true;
+        });
+        li[next].className=("pa_y");
+        li[now].className=("pa");
+        now=next
+    }
+    function con_move1() {
+        next--;
+        if(next<0){
+            next=re_y_contian.length-1;
+        }
+        re_y_contian[next].style.left=-wid+"px";
+        animate(re_y_contian[now],{left:wid});
+        animate(re_y_contian[next],{left:0},function () {
+            flag=true;
+        });
+        li[next].className=("pa_y");
+        li[now].className=("pa");
+        now=next
+    }
+
+    li.forEach(function (element,index) {
+        element.onclick=function () {
+            if(now==index){
+                return;
+            }
+            if(now>index){
+                re_y_contian[index].style.left=-wid+"px";
+                animate(re_y_contian[now],{left:wid}) ;
+                animate(re_y_contian[index],{left:0});
+                li[index].className=("pa_y");
+                li[now].className=("pa");
+                now=next=index;
+
+            }
+            if(now<index){
+                re_y_contian[index].style.left=wid+"px";
+                animate(re_y_contian[now],{left:-wid});
+                animate(re_y_contian[index],{left:0});
+                li[index].className=("pa_y");
+                li[now].className=("pa");
+                now=next=index;
+            }
+        }
+    })
+    }
+    cont(0);
+    cont(1);
+    cont(2);
+    cont(3);
+

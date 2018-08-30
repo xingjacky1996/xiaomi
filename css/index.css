@@ -379,6 +379,7 @@ a{
 .img_b{
     width: 1226px;
     height: 460px;
+    position: absolute;
 }
 .passageway{
     width: 1226px;
@@ -717,11 +718,11 @@ a{
      height: 673px;
      background:#ffffff;
      margin: 20px auto 42px;
- }
+}
  .sharkphone{
      width: 234px;
      height: 614px;
- }
+}
 .Appliance{
     width: 1226px;
     height: 673px;
@@ -733,7 +734,7 @@ a{
      width: 1226px;
      height: 58px;
      background:#f5f5f5
- }
+}
 .title{
     display:block;
     width:100px;
@@ -743,25 +744,12 @@ a{
     margin-top: 16px;
     font-weight: normal;
 }
-.TAB{
-    width: 258px;
-    height: 40px;
-    float:right;
-    padding-top: 16px;
-}
 .tab{
-    width: 63px;
     height: 21px;
     font-size: 15px;
     color:#424242;
-    margin-right: 30px;
-}
-.tab:hover{
-    color: #ff6700;
+    margin-left: 30px;
     border-bottom:2px solid #ff6700;
-}
-.tab2{
-    margin-right:0px;
 }
 .imgbox1{
     width: 234px;
@@ -779,21 +767,19 @@ a{
 }
 .box{
     width: 992px;
-    height: 614px;
+    height: 615px;
     background: #F5F5F5;
     float:right;
+    position: relative;
 }
 .Appliance>.box{
     width: 992px;
-    height: 614px;
-    background: yellowgreen;
+    height: 615px;
+    background: #F5F5F5;
     float:right;
     position: absolute;
     right: 0;
     bottom:0;
- } 
- .Appliance>.waterclaen{
-    z-index: 10;
 }
 .brick{
     width: 234px;
@@ -803,7 +789,7 @@ a{
     margin:0 0 14px 14px;
     position:relative;
     overflow: hidden;
-    z-index: 10;
+    z-index: 5;
 }
 .brick:hover{
     transform:translateY(-4px);
@@ -857,7 +843,6 @@ a{
     background: #ffffff;
     float:right;
     margin: 0 0 14px 14px;
-    z-index: 10;
 }
 .waterclaen:hover{
     transform: translateY(-4px);
@@ -887,7 +872,6 @@ a{
     background:#ffffff;
     float:right;
     margin: 0 0 14px 14px;
-    z-index: 10;
 }
 .waterclaen1:hover{
     transform: translateY(-4px);
@@ -913,19 +897,35 @@ a{
     font-size: 14px;
     color:#757575;
 }
-.Intelligence {
-     width: 1226px;
-     height: 673px;
-     background: #ffffff;
-     margin: 20px auto 42px;
- }
- .TAB1{
-     width: 320px;
-     height: 42px;
-     float:right;
-     text-align: end;
-     padding-top: 16px;
- }
+.Intelligence{
+    width: 1226px;
+    height: 673px;
+    background: #ffffff;
+    margin: 20px auto 42px;
+    position: relative;
+}
+.Intelligence>.box{
+    width: 992px;
+    height: 615px;
+    background: #F5F5F5;
+    float:right;
+    position: absolute;
+    right: 0;
+    bottom:0;
+}
+.TAB1{
+    font-size: 15px;
+    color:#424242;
+    height: 42px;
+    float:right;
+    padding-top: 16px;
+}
+.TAB1 a{
+    font-size: 15px;
+    color:#424242;
+    border-bottom: 2px solid #ff6700;
+    margin-left: 30px;
+}
  .collocation{
      width: 1226px;
      height: 673px;
@@ -1058,32 +1058,43 @@ a{
     background: #ffffff;
     margin-right: 14px;
     float:left;
+    overflow: hidden;
 }
 .co_left{
-    width: 40px;
-    height: 80px;
+    width: 20px;
+    height: 48px;
+    background: #d9d9d9;
     position:absolute;
     left:0px;
     top:0px;
     bottom:0px;
     margin-top:auto;
     margin-bottom:auto;
-    background:url(../img/icon-slides.png) no-repeat;
     background-position:0px 0;
     display: none;
+    overflow: hidden;
+}
+.icon-zuo{
+    line-height: 48px;
 }
 .co_right{
-    width: 40px;
-    height: 80px;
+    width: 20px;
+    height: 48px;
+    background: #d9d9d9;
     position:absolute;
     right:0px;
     top:0px;
     bottom:0px;
     margin-top:auto;
     margin-bottom:auto;
-    background:url(../img/icon-slides.png) no-repeat;
-    background-position:-42px 0;
     display: none;
+    overflow: hidden;
+}
+.icon-you2{
+    line-height: 48px;
+}
+.re_y_contian{
+    position: absolute;
 }
 .re1:hover{
     transform: translateY(-4px);
@@ -1098,16 +1109,24 @@ a{
 }
 .re_y{
     border-top: 1px solid #ffac13;
+    overflow: hidden;
+    position: relative;
 }
 .re_g{
     border-top: 1px solid #83c44e;
+    overflow: hidden;
+    position: relative;
 }
 .re_r{
     border-top: 1px solid #e53935;
+    overflow: hidden;
+    position: relative;
 }
 .re_0_b{
     margin-right: 0px;
     border-top: 1px solid #2196f3;
+    overflow: hidden;
+    position: relative;
 }
 .title1{
     display: block;
@@ -1168,28 +1187,38 @@ a{
 .smllpoint_3{
     width: 96px;
     height: 30px;
-    margin:0 auto;
+    margin:16px auto 0;
     text-align: center;
+    display:flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom:0;
+    left:100px;
 }
-.pa_o{
-    width: 30px;
-    height: 30px;
-    float:left;
-    font-size: 20px;
-    color:#ff6700;
+.pa_y{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background:#FFF;
+    border:1px solid #ff6700;
 }
 .pa{
-    width: 30px;
-    height: 30px;
-    float:left;
-    font-size: 20px;
-    color:#b0b0b0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background:#B0B0B0;
+}
+.pa:hover{
+    background:#ff6700;
 }
 .smllpoint_4{
     width: 140px;
     height: 30px;
     margin:0 auto;
     text-align: center;
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
 }
 .video{
     width: 1226px;
